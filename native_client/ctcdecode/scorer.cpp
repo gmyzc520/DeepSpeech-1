@@ -43,6 +43,16 @@ Scorer::Scorer(double alpha,
   setup(lm_path, trie_path);
 }
 
+Scorer::Scorer(double alpha,
+               double beta,
+               const std::string& lm_path,
+               const std::string& trie_path,
+               const char* alphabet_config_path)
+  : Scorer(alpha, beta, lm_path, trie_path, Alphabet(alphabet_config_path))
+{
+
+}
+
 Scorer::~Scorer() {
 }
 
